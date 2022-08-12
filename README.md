@@ -1,5 +1,6 @@
 # windows-script-encoding
-I struggled to find nearly any documentation on the windows script encoder, so I created this VBScript which does it for you.
+A free and open source windows script host encoder for VBScript and JScript files.<br />
+**I struggled to find nearly any documentation on the windows script encoder, so I created this VBScript which does it for you.**
 
 # About
 Encoding your windows script host scripts is an important part of deveoping windows script-based malware, otherwise the target can read exactly what it is you wrote, leaving you with the job of obfuscation.<br />
