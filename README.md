@@ -14,5 +14,4 @@ Once downloaded, run the encoder and fill out the options.<br />
   - Type (VBScript/JScript)
   - File (the input file, including it's file extension)
   - Encoded File (the name for the output encoded file, including it's encoded file extension. [.vbe for VBScript, .jse for JScript]
-<br />
 `This encoder must be in the same directory as the script you are encoding.`
