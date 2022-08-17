@@ -19,13 +19,15 @@ Set fso = CreateObject("Scripting.FileSystemObject")
 Dim current_dir : current_dir = fso.GetParentFolderName(WScript.ScriptFullName)
 Dim appdata : appdata = shell.ExpandEnvironmentStrings("%APPDATA%")
 
-' Download files
-shell.Run "powershell -WindowStyle hidden -Command ""Invoke-WebRequest https://github.com/Yochran/windows-script-encoding/releases/download/2.0.0/encoder.exe -OutFile encoder.exe"""
-shell.Run "powershell -WindowStyle hidden -Command ""Invoke-WebRequest https://github.com/Yochran/windows-script-encoding/releases/download/2.0.0/encoder.vbs -OutFile encoder.vbs"""
-
 ' Sleep for 10 seconds
 box = MsgBox("Downloading files now...", 0 + 64, "Installation Script")
-WScript.Sleep(10000)
+
+' Download files
+shell.Run "powershell -Command ""Invoke-WebRequest https://github.com/Yochran/windows-script-encoding/releases/download/2.0.0/encoder.exe -OutFile encoder.exe"""
+shell.Run "powershell -Command ""Invoke-WebRequest https://github.com/Yochran/windows-script-encoding/releases/download/2.0.0/encoder.vbs -OutFile encoder.vbs"""
+
+' Sleep for 2 seconds
+WScript.Sleep(5000)
 
 Dim target_folder : target_folder = appdata & "\windows-script-encoding"
 
@@ -56,3 +58,7 @@ End If
 
 ' Final dialog
 box = MsgBox("windows-script-encoder was successfully installed.", 0 + 64, "Installation Script")
+
+' Delete installed files
+fso.DeleteFile current_dir & "\encoder.exe"
+fso.DeleteFile current_dir & "\encoder.vbs"
