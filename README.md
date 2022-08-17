@@ -7,7 +7,7 @@ Encoding your windows script host scripts is an important part of deveoping wind
 This script encoder will encode your VBScript and JScript files so that they are unreadable.
 
 # Download
-To download this encoder, click [here](https://github.com/Yochran/windows-script-encoding/releases/download/2.0.0/install.vbs) and run through the install script..
+To download this encoder, click [here](https://github.com/Yochran/windows-script-encoding/releases/download/2.0.0/install.vbs) and run through the install script.
 <br /><br />
 **You (might?) have to turn off your AntiVirus product for the executable to work (because Windows Defender doesn't like uncommon executables)**
 
