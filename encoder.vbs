@@ -28,30 +28,12 @@ Function Encode(sInput, sExtension, sType, sOutput)
     encoded_file.Close
 End Function
 
-' Get type
-Dim sType, sExtension
-sType = InputBox("Enter the type (VBScript, JScript):")
+' Get arguments
+Dim arg1, arg2, arg3, arg4, box
+arg1 = WScript.Arguments(0)
+arg2 = WScript.Arguments(1)
+arg3 = WScript.Arguments(2)
+arg4 = WScript.Arguments(3)
 
-If StrComp(sType, "VBScript") Then
-    sExtension = ".vbs"
-Else if StrComp(sType, "JScript") Then
-    sExtension = ".js"
-    End If
-End If
-
-' Get file
-Dim sInput
-sInput = InputBox("Enter the name of the file you wish to encode:")
-
-' Get output
-Dim sOutput
-sOutput = InputBox("Enter the name of the output file (including encoded extension):")
-
-' Check if length = 0, if not, encode file
-If Len(sInput) = 0 OR Len(sExtension) = 0 OR Len(sType) = 0 OR Len(sOutput) = 0 Then
-    Dim sErr
-    sErr = MsgBox("One or more inputs we're not entered.",0+16,"Error")
-Else
-    ' Encode script
-    Encode sInput, sExtension, sType, sOutput
-End If
+' Run encode function
+Encode arg1, arg2, arg3, arg4
